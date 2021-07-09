@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #18181d;
+    --secondary-color: #43444d;
+}
+
+body{
+    background-image: url('https://images.hdqwalls.com/wallpapers/black-adam-u1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    backdrop-filter: blur(14px);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+main{
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+header{
+    background-color: transparent;
+    position: sticky;
+    top: 0%;
+    z-index: 50;
+    transition: all 0.3s ease-in;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 5rem;
+
+}
+
+.nav h1{
+    color: rgb(34, 37, 39);
+    margin: 0;
+    font-size: 2.7rem;
+}
+
+
+.nav .nav-items{
+    display: flex;
+    margin-right: auto;
+}
+
+.nav .nav-link{
+    list-style: none;
+    padding-left: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(201, 192, 192);
+}
+
+a:hover{
+    color: white;
+}
+
+#form{
+    display: flex;
+    align-items: center;
+}
+
+#search{
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(128, 120, 120);
+    border-radius: 60px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: white;
+}
+
+#search:focus{
+    outline: 0;
+    background-color: var(--primary-color);
+}
+
+.scroll-active{
+    background-color: #000000f0
+}
+
+.scroll-active .nav h1{
+    color: rgb(83, 91, 100);
+}
+
+
+
+
+
+
+
+
+
+
+#loading{
+    color: white;
+    margin: auto;
+    font-size: 3rem;
+    margin-top: 30vh;
+}
+
+.sec{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+    
+
+.movie-type{
+    color: white;
+    font-size: 3rem;
+    margin-left: 5%;
+    padding-top: 4rem;
+    flex-basis: 100%;
+}
+
+.movie{
+    width: 285px;
+    max-height: 30rem;
+    margin: 2rem 1.7rem;
+    background-color: rgb(65, 70, 80 ,95%);
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 2px 3px 11px black;
+}
+
+.movie img{
+    width: 100%;
+    height: 85%;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+
+}
+
+.info h3{
+    margin: 0;
+    color: white;
+}
+
+.info .rating{
+    background-color: var(--primary-color);
+    padding: .25rem .5rem;
+    font-weight: bold;
+}
+
+.green{
+    color: lightgreen;
+}
+
+.orange{
+    color: lightsalmon;
+}
+
+.red{
+    color: red;
+}
+
+/* .overview{
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -218px;
+    padding: 1rem; 
+    transition: all 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    bottom: 0;
+} */
+
+.overview{
+    color: white;
+    background-color: #3e434e;
+    position: absolute;
+    max-height: 62%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(101%);
+    padding: 1rem;
+    transition: all 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+
+}
+
+.overview h3{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+/* Footer  */
+.sec-footer{
+    height: 24rem;
+    margin-top: 10rem;
+    background: rgba(0 ,0 ,0 , 71%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.social-media{
+    margin-top: 1.5rem;
+}
+
+.fab{
+    padding: 0rem 1rem;
+    transform: scale(1.2);
+    transition: all 0.25s;
+}
+
+.fab:hover{
+    transform: scale(1.4);
+}
+
+.footer-other-link{
+    padding: 0rem 1rem;
+    font-size: 01rem;
+}
+
+.sec-footer h3{
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.developer-contact{
+    transform: translateY(40%);
+}
+
+.bingerz2021{
+    color: rgb(133, 55, 165);
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 450px){
+    body{
+        font-size: 0.5rem;
+    }
+
+    .movie{
+        width: 110px;
+        max-height: 12rem;
+        margin: 1rem 0.8rem;
+    }
+
+    img{
+        max-height: 73%;
+    }
+
+    .info{
+        margin: 0px 5px;
+    }
+
+    .info h3{
+        font-size: 0.6rem;
+    }
+
+    .info .rating{
+        transform: scale(60%);
+    }
+}

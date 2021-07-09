@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <title>MOVIE SEARCH</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="#">
+                <h1 id="logo">BINGERZ</h1>
+            </a>
+            <ul class="nav-items">
+                <li class="nav-link"> <a style="color: white;" class="nav-items" href="#">Home</a> </li>
+                <li class="nav-link"> <a href="htmls/Search_Results.html">Search</a> </li>
+                <li class="nav-link"> <a href="#">Contact Us</a> </li>
+            </ul>
+            <form id="form" method="get" action="htmls/Search_Results.html">
+                <input type="text" id="search" class="search" name="queryString" placeholder="Search">
+            </form>
+        </nav>
+    </header>
+
+    <main>
+
+
+        <!-- <section class="sec">
+
+            <h2 class="movie-type">Popular Movies</h2>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/jTswp6KyDYKtvC52GbHagrZbGvD.jpg" alt="">
+                <div class="info">
+                    <h3>Luca</h3>
+                    <span class="rating orange">8.2</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But
+                        all
+                        the fun is threatened by a deeply-held secret: they are sea monsters from another world just
+                        below
+                        the water’s surface.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/niw2AKHz6XmwiRMLWaoyAOAti0G.jpg" alt="">
+                <div class="info">
+                    <h3>Infinite</h3>
+                    <span class="rating orange">0</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>Evan McCauley has skills he never learned and memories of places he has never visited.
+                        Self-medicated and on the brink of a mental breakdown, a secret group that call themselves
+                        “Infinites” come to his rescue, revealing that his memories are real.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg" alt="">
+                <div class="info">
+                    <h3>The Tomorrow War</h3>
+                    <span class="rating orange">8.5</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>The world is stunned when a group of time travelers arrive from the year 2051 to deliver an
+                        urgent
+                        message: Thirty years in the future, mankind is losing a global war against a deadly alien
+                        species.
+                        The only hope for survival is for soldiers and civilians from the present to be transported to
+                        the
+                        future and join the fight. Among those recruited is high school teacher and family man Dan
+                        Forester.
+                        Determined to save the world for his young daughter, Dan teams up with a brilliant scientist and
+                        his
+                        estranged father in a desperate quest to rewrite the fate of the planet.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/qIicLxr7B7gIt5hxZxo423BJLlK.jpg" alt="">
+                <div class="info">
+                    <h3>F9</h3>
+                    <span class="rating orange">7.7</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>Dominic Toretto and his crew battle the most skilled assassin and high-performance driver
+                        they've
+                        ever encountered: his forsaken brother.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg" alt="">
+                <div class="info">
+                    <h3>A Quiet Place Part II</h3>
+                    <span class="rating orange">7.8</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>Following the events at home, the Abbott family now face the terrors of the outside world.
+                        Forced
+                        to venture into the unknown, they realize that the creatures that hunt by sound are not the only
+                        threats that lurk beyond the sand path.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/rTh4K5uw9HypmpGslcKd4QfHl93.jpg" alt="">
+                <div class="info">
+                    <h3>Cruella</h3>
+                    <span class="rating orange">8.5</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>In 1970s London amidst the punk rock revolution, a young grifter named Estella is determined to
+                        make a name for herself with her designs. She befriends a pair of young thieves who appreciate
+                        her
+                        appetite for mischief, and together they are able to build a life for themselves on the London
+                        streets. One day, Estella’s flair for fashion catches the eye of the Baroness von Hellman, a
+                        fashion
+                        legend who is devastatingly chic and terrifyingly haute. But their relationship sets in motion a
+                        course of events and revelations that will cause Estella to embrace her wicked side and become
+                        the
+                        raucous, fashionable and revenge-bent Cruella.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/M7SUK85sKjaStg4TKhlAVyGlz3.jpg" alt="">
+                <div class="info">
+                    <h3>Wrath of Man</h3>
+                    <span class="rating orange">7.8</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>A cold and mysterious new security guard for a Los Angeles cash truck company surprises his
+                        co-workers when he unleashes precision skills during a heist. The crew is left wondering who he
+                        is
+                        and where he came from. Soon, the marksman's ultimate motive becomes clear as he takes dramatic
+                        and
+                        irrevocable steps to settle a score.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/5dExO5G2iaaTxYnLIFKLWofDzyI.jpg" alt="">
+                <div class="info">
+                    <h3>The Boss Baby: Family Business</h3>
+                    <span class="rating orange">8</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>The Templeton brothers — Tim and his Boss Baby little bro Ted — have become adults and drifted
+                        away
+                        from each other. But a new boss baby with a cutting-edge approach and a can-do attitude is about
+                        to
+                        bring them together again … and inspire a new family business.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/2DyEk84XnbJEdPlGF43crxfdtHH.jpg" alt="">
+                <div class="info">
+                    <h3>Fast &amp; Furious 10</h3>
+                    <span class="rating orange">0</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>The tenth installment in the Fast Saga.</div>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="https://image.tmdb.org/t/p/w500/xbSuFiJbbBWCkyCCKIMfuDCA4yV.jpg" alt="">
+                <div class="info">
+                    <h3>The Conjuring: The Devil Made Me Do It</h3>
+                    <span class="rating orange">8</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <div>Paranormal investigators Ed and Lorraine Warren encounter what would become one of the most
+                        sensational cases from their files. The fight for the soul of a young boy takes them beyond
+                        anything
+                        they'd ever seen before, to mark the first time in U.S. history that a murder suspect would
+                        claim
+                        demonic possession as a defense.</div>
+                </div>
+            </div>
+        </section>  -->
+
+    </main>
+
+    <footer class="footer">
+        <section class="sec-footer">
+            <div class="social-media">
+                <a target="_main" href="https://fb.com"><i class="fab fa-facebook fa-2x"></i></a>
+                <a target="_main" href="https://twitter.com"><i class="fab fa-twitter fa-2x"></i></a>
+                <a target="_main" href="https://instagram.com"><i class="fab fa-instagram fa-2x"></i></a>
+                <a target="_main" href="https://github.com/vasu4651"><i class="fab fa-github fa-2x"></i></a>
+                <a target="_main" href="https://linkedin.com/in/vasu4651"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+            <div class="other-links">
+                <a href="" class="footer-other-link">About</a>
+                <a href="" class="footer-other-link">Need Help?</a>
+                <a href="" class="footer-other-link">Content Guide?</a>
+                <a href="" class="footer-other-link">Privacy</a>
+                <a href="" class="footer-other-link">Terms Of Use</a>
+                <a href="" class="footer-other-link">Advertising</a>
+            </div>
+            <div class="developer-contact">
+                <h3><a href="https://linkedin.com/in/vasu4651">Developer Contact</a></h3>
+            </div>
+            <div class="bingerz2021">
+                <h3>Bingerz@2021</h3>
+            </div>
+        </section>
+    </footer>
+    <script src="https://kit.fontawesome.com/3a105db922.js" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
