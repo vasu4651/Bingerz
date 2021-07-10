@@ -10,7 +10,8 @@
 }
 
 body{
-    background-image: url('https://images.hdqwalls.com/wallpapers/black-adam-u1.jpg');
+    /* background-image: url('https://images.hdqwalls.com/wallpapers/black-adam-u1.jpg'); */
+    background-color: rgb(83, 91, 100);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -31,7 +32,7 @@ main{
 
 
 header{
-    background-color: transparent;
+    background-color: black;
     position: sticky;
     top: 0%;
     z-index: 50;
