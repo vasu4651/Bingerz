@@ -1,4 +1,7 @@
-let genreSelect = document.querySelector('.genreSelect');
+let sortSelect = document.querySelector('#sortSelect')
+let genreSelect = document.querySelector('#genreSelect');
+let currMoviesList = {};
+let currMovieType = {};
 const trendingAPI = `https://api.themoviedb.org/3/trending/movie/day?api_key=03c2178517dc28b9826a04205452dba5`;
 
 
@@ -12,8 +15,13 @@ function getRatingColor(vote) {
     return 'red';
 } 
 
-function showMovies(movies,movieType)
+function showMovies(movies,movieType,sortToggle=false)
 {
+    if(sortToggle == false){
+        currMoviesList = movies;
+        currMovieType = movieType;
+        sortSelect.selectedIndex = 0;
+    }
     let sec = document.querySelector('.sec');
     sec.innerHTML = `<h2 class="movie-type">${movieType}</h2>`;
 
@@ -24,7 +32,7 @@ function showMovies(movies,movieType)
 
         div.innerHTML = `
             <img src="${img_url}"
-                alt="">
+                alt="" onerror=" this.onerror=null; this.src='https://media.istockphoto.com/photos/flying-popcorn-from-striped-bucket-isolated-on-black-background-picture-id1169791287?k=6&m=1169791287&s=170667a&w=0&h=DU4166zj4GcXG2B-ZSrxAyDSabgSEcwv2_UeP16km0U=' ">
             <div class="info">
                 <h3>${ele.original_title}</h3>
                 <span class = "rating ${getRatingColor(ele.vote_average)} "> ${ele.vote_average} </span>
@@ -54,7 +62,6 @@ function getMovies(movieURL,movieType) {
 }
 
 function getGenreUtil(genreObj) {
-    genreSelect.innerHTML = '<option value="none">Genre</option>';
     for(item of genreObj) {
         const option = document.createElement('option');
         option.className = 'genreOption';
@@ -85,6 +92,49 @@ genreSelect.addEventListener('change' , () => {
         getMovies(trendingAPI,"Trending Now\xa0\xa0:\xa0\xa0 ");
     else
         getMovies(`https://api.themoviedb.org/3/discover/movie?api_key=03c2178517dc28b9826a04205452dba5&with_genres=${value}`,`${genreSelectText}`);
+})
+
+sortSelect.addEventListener('change' , () => {
+    const value = sortSelect.value;
+    const sortSelectText = sortSelect.options[sortSelect.selectedIndex].text;
+    let sortedMoviesList = currMoviesList;
+
+    if(value == 'none');
+    else if(value == 'topRated') {   // sort currMoviesList on basis of vote_average and showMovies(sortedMoviesList, currMovieType, true);
+        sortedMoviesList.sort((a,b) => {
+            return b.vote_average - a.vote_average;
+        });
+    }
+    else if(value == 'latest'){
+        sortedMoviesList.sort( (a,b) => {
+            let da = a.release_date;
+            let db = b.release_date;
+
+            da = Date.parse(da);
+            db = Date.parse(db);
+            if(da > db){
+                console.log(-1);
+                return -1;
+            }
+            return 1;
+        })
+    }
+    else{
+        sortedMoviesList.sort( (a,b) => {
+            let da = a.release_date;
+            let db = b.release_date;
+
+            da = Date.parse(da);
+            db = Date.parse(db);
+            if(da < db){
+                console.log(-1);
+                return -1;
+            }
+            return 1;
+        })
+    }
+
+    showMovies(sortedMoviesList,currMovieType,true);
 })
 
 window.addEventListener('scroll' , () => {
