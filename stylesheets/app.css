@@ -47,7 +47,7 @@ header{
 }
 
 .nav h1{
-    color: rgb(34, 37, 39);
+    color: rgb(78, 88, 94);
     margin: 0;
     font-size: 2.7rem;
 }
@@ -136,7 +136,7 @@ a:hover{
     width: 285px;
     max-height: 30rem;
     margin: 2rem 1.7rem;
-    background-color: rgba(69, 145, 207, 0.95);
+    background-color: rgba(47, 102, 148, 0.95);
     position: relative;
     overflow: hidden;
     border-radius: 5px;
@@ -198,7 +198,7 @@ a:hover{
 .overview{
     color: white;
     /* background-color: #3e434e; */
-    background-color: rgba(69, 145, 207, 0.95);
+    background-color: rgba(47, 102, 148, 0.95);
     overflow-y: scroll;
     /* overflow-x: hidden; */
     position: absolute;
