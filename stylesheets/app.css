@@ -196,6 +196,8 @@ a:hover{
 .overview{
     color: white;
     background-color: #3e434e;
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
     position: absolute;
     max-height: 62%;
     left: 0;
@@ -205,6 +207,12 @@ a:hover{
     padding: 1rem;
     transition: all 0.3s ease-in;
 }
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 
 .movie:hover .overview{
     transform: translateY(0);
