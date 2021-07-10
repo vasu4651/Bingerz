@@ -136,7 +136,7 @@ a:hover{
     width: 285px;
     max-height: 30rem;
     margin: 2rem 1.7rem;
-    background-color: rgb(65, 70, 80 ,95%);
+    background-color: rgba(69, 145, 207, 0.95);
     position: relative;
     overflow: hidden;
     border-radius: 5px;
@@ -197,7 +197,8 @@ a:hover{
 
 .overview{
     color: white;
-    background-color: #3e434e;
+    /* background-color: #3e434e; */
+    background-color: rgba(69, 145, 207, 0.95);
     overflow-y: scroll;
     /* overflow-x: hidden; */
     position: absolute;
