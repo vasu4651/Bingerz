@@ -15,9 +15,9 @@ function getRatingColor(vote) {
     return 'red';
 } 
 
-function showMovies(movies,movieType,sortToggle=false)
+function showMovies(movies,movieType,sortToggle)
 {
-    if(sortToggle == false){
+    if(sortToggle != true){
         currMoviesList = movies;
         currMovieType = movieType;
         sortSelect.selectedIndex = 0;
@@ -97,8 +97,8 @@ genreSelect.addEventListener('change' , () => {
 sortSelect.addEventListener('change' , () => {
     const value = sortSelect.value;
     const sortSelectText = sortSelect.options[sortSelect.selectedIndex].text;
-    let sortedMoviesList = currMoviesList;
-
+    let sortedMoviesList = JSON.parse(JSON.stringify(currMoviesList));
+    
     if(value == 'none');
     else if(value == 'topRated') {   // sort currMoviesList on basis of vote_average and showMovies(sortedMoviesList, currMovieType, true);
         sortedMoviesList.sort((a,b) => {
@@ -112,10 +112,8 @@ sortSelect.addEventListener('change' , () => {
 
             da = Date.parse(da);
             db = Date.parse(db);
-            if(da > db){
-                console.log(-1);
+            if(da > db)
                 return -1;
-            }
             return 1;
         })
     }
@@ -126,10 +124,8 @@ sortSelect.addEventListener('change' , () => {
 
             da = Date.parse(da);
             db = Date.parse(db);
-            if(da < db){
-                console.log(-1);
+            if(da < db)
                 return -1;
-            }
             return 1;
         })
     }
