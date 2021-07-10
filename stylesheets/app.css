@@ -14,6 +14,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
+    -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
     font-family: 'Poppins', sans-serif;
     margin: 0;
