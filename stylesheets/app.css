@@ -10,8 +10,7 @@
 }
 
 body{
-    /* background-image: url('https://images.hdqwalls.com/wallpapers/black-adam-u1.jpg'); */
-    background-color: rgb(83, 91, 100);
+    background-image: url('https://images.hdqwalls.com/wallpapers/black-adam-u1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -32,7 +31,7 @@ main{
 
 
 header{
-    background-color: black;
+    background-color: transparent;
     position: sticky;
     top: 0%;
     z-index: 50;
@@ -47,7 +46,7 @@ header{
 }
 
 .nav h1{
-    color: rgb(78, 88, 94);
+    color: rgb(34, 37, 39);
     margin: 0;
     font-size: 2.7rem;
 }
@@ -136,7 +135,7 @@ a:hover{
     width: 285px;
     max-height: 30rem;
     margin: 2rem 1.7rem;
-    background-color: rgba(47, 102, 148, 0.95);
+    background-color: rgb(65, 70, 80 ,95%);
     position: relative;
     overflow: hidden;
     border-radius: 5px;
@@ -197,8 +196,7 @@ a:hover{
 
 .overview{
     color: white;
-    /* background-color: #3e434e; */
-    background-color: rgba(47, 102, 148, 0.95);
+    background-color: #3e434e;
     overflow-y: scroll;
     /* overflow-x: hidden; */
     position: absolute;
