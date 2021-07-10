@@ -1,3 +1,8 @@
+const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=03c2178517dc28b9826a04205452dba5&language=en-US&page=1';
+const urlTopRated = 'https://api.themoviedb.org/3/movie/top_rated?api_key=03c2178517dc28b9826a04205452dba5&language=en-US&page=1';
+
+
+
 function getRatingColor(vote) {
     if(vote >= 7.5)
         return 'green';
@@ -58,12 +63,10 @@ window.addEventListener('scroll' , () => {
     header.classList.toggle('scroll-active' , window.scrollY > 0);
 })
 
+window.addEventListener('load' , () => {
+    getMovies(urlPopular,"Popular Movies");
+    getMovies(urlTopRated,"Top Rated Movies");
 
-
-const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=03c2178517dc28b9826a04205452dba5&language=en-US&page=1';
-const urlTopRated = 'https://api.themoviedb.org/3/movie/top_rated?api_key=03c2178517dc28b9826a04205452dba5&language=en-US&page=1';
-
-getMovies(urlPopular,"Popular Movies");
-getMovies(urlTopRated,"Top Rated Movies");
+})
 
 

@@ -1,39 +1,8 @@
 let genreSelect = document.querySelector('.genreSelect');
-
-window.addEventListener('load' , () => {
-    const params = (new URL(document.location)).searchParams;
-    const queryString = params.get('queryString');
-    fetchGenres();
-    if(queryString === null)
-        fetchTrending();
-    else
-    {
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=03c2178517dc28b9826a04205452dba5&query=${queryString}`)
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                const results = data.results;
-                showMovies(results,"Search Results for\xa0\xa0:\xa0\xa0 "  + queryString);
-            })
-    }
+const trendingAPI = `https://api.themoviedb.org/3/trending/movie/day?api_key=03c2178517dc28b9826a04205452dba5`;
 
 
-    
-})
 
-
-function fetchTrending() {
-    console.log('inisde trending fetch');
-    fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=03c2178517dc28b9826a04205452dba5`)
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                const results = data.results;
-                showMovies(results,"Trending Now\xa0\xa0:\xa0\xa0 ");
-            })
-}
 
 function getRatingColor(vote) {
     if(vote >= 7.5)
@@ -70,27 +39,21 @@ function showMovies(movies,movieType)
     }
 }
 
-window.addEventListener('scroll' , () => {
-    let header = document.querySelector('header');
-    header.classList.toggle('scroll-active' , window.scrollY > 0);
-})
-
-
-function fetchGenres() {
-    fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=03c2178517dc28b9826a04205452dba5&language=en-US')
-        .then( res => {
+function getMovies(movieURL,movieType) {
+    fetch(movieURL)
+        .then(res => {
             return res.json()
         })
-        .then (data => {
-            const genreObj =  data.genres;
-            fetchGenreUtil(genreObj);
+        .then(data => {
+            const results = data.results;
+            showMovies(results,movieType);
         })
-        .catch ( e=>{
-            console.log("Oops ... ", e);
+        .catch(e => {
+            console.log("Oops ... " , e);
         })
 }
 
-function fetchGenreUtil(genreObj) {
+function getGenreUtil(genreObj) {
     genreSelect.innerHTML = '<option value="none">Genre</option>';
     for(item of genreObj) {
         const option = document.createElement('option');
@@ -101,22 +64,43 @@ function fetchGenreUtil(genreObj) {
     }
 }
 
+function getGenres() {
+    fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=03c2178517dc28b9826a04205452dba5&language=en-US')
+        .then( res => {
+            return res.json()
+        })
+        .then (data => {
+            const genreObj =  data.genres;
+            getGenreUtil(genreObj);
+        })
+        .catch ( e=>{
+            console.log("Oops ... ", e);
+        })
+}
+
 genreSelect.addEventListener('change' , () => {
     const value = genreSelect.value;
     const genreSelectText = genreSelect.options[genreSelect.selectedIndex].text;
     if(value == 'none')
-        fetchTrending();
-    else {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=03c2178517dc28b9826a04205452dba5&with_genres=${value}`)
-        .then( res=> {
-            return res.json();
-        })
-        .then( data => {
-            const results = data.results;
-            showMovies(results,`${genreSelectText}`);
-        })
-        .catch(e => {
-            console.log("Oops ... ", e);
-        })
+        getMovies(trendingAPI,"Trending Now\xa0\xa0:\xa0\xa0 ");
+    else
+        getMovies(`https://api.themoviedb.org/3/discover/movie?api_key=03c2178517dc28b9826a04205452dba5&with_genres=${value}`,`${genreSelectText}`);
+})
+
+window.addEventListener('scroll' , () => {
+    let header = document.querySelector('header');
+    header.classList.toggle('scroll-active' , window.scrollY > 0);
+})
+
+
+window.addEventListener('load' , () => {
+    getGenres();
+    const params = (new URL(document.location)).searchParams;  // to get query string from previous page
+    const queryString = params.get('queryString');
+    if(queryString === null)
+        getMovies(trendingAPI,"Trending Now\xa0\xa0:\xa0\xa0 ");
+    else
+    {
+        getMovies(`https://api.themoviedb.org/3/search/movie?api_key=03c2178517dc28b9826a04205452dba5&query=${queryString}`,"Search Results for\xa0\xa0:\xa0\xa0 "  + queryString);
     }
 })
