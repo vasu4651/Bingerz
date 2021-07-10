@@ -1,3 +1,30 @@
 .black{
     color: black;
 }
+
+.filter{
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+}
+
+.select{
+    background-color: transparent;
+    color: rgb(158, 147, 147);
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgb(128, 120, 120);
+    font-size: 1.05rem;
+    font-weight: 400;
+    border-radius: 20px;
+    text-align: center;
+    margin: 2rem 2rem 0rem 0rem;  /* top | right | bottom | left */
+    padding: 0.3rem .7rem;
+}
+
+.select:focus{
+    outline: none;
+}
+
+option{
+    background-color: rgb(61, 60, 60);
+}

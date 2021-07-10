@@ -119,14 +119,15 @@ a:hover{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    /* overflow-x: scroll;  can also make movies to be in one line and be scrollable horizontally */
 }
     
 
-.movie-type{
+.movie-type{         /*  headings like popular movies , trending now etc. */
     color: white;
     font-size: 3rem;
     margin-left: 5%;
-    padding-top: 4rem;
+    padding-top: 3rem;
     flex-basis: 100%;
 }
 
