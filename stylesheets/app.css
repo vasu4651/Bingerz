@@ -390,8 +390,8 @@ a:hover{
     }
 
     .movie{
-        width: 120px;
-        max-height: 12rem;
+        width: 170px;
+        max-height: 17.5rem;
         margin: 1rem 0.8rem;
     }
 
@@ -399,8 +399,8 @@ a:hover{
         font-size: 1.8rem;
     }
 
-    img{
-        max-height: 81%;
+    .movie img{
+        max-height: 85%;
     }
 
     .info{
@@ -408,7 +408,7 @@ a:hover{
     }
 
     .info h3{
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .info .rating{
@@ -437,7 +437,17 @@ a:hover{
         font-size: 0.7rem;
         padding: 0rem .3rem;
     }
+}
 
 
+@media (max-width: 400px) {
+    .movie{
+        width: 150px;
+        max-height: 15rem;
+        margin: 1rem 0.8rem;
+    }
 
+    .info h3{
+        font-size: 0.6rem;
+    }
 }
