@@ -5,7 +5,7 @@
 .filter{
     display: flex;
     justify-content: flex-end;
-    width: 85%;
+    width: 87%;
 }
 
 .select{
@@ -27,4 +27,30 @@
 
 option{
     background-color: rgb(61, 60, 60);
+}
+
+
+@media (max-width: 768px) {
+    .filter{
+        width: 90%;
+    }
+
+    .select {
+        font-size: 0.9rem;
+        margin: 2rem 1.5rem 0rem 0rem;
+        padding: 0.2rem 0.2rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .filter{
+        width: 94%;
+    }
+
+    .select {
+        font-size: 0.7rem;
+        margin: 2rem 1rem 0rem 0rem;
+        padding: 0.2rem 0.2rem;
+    }
 }
