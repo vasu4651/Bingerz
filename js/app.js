@@ -1,7 +1,7 @@
 const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=03c2178517dc28b9826a04205452dba5&language=en-US&page=1';
 const urlTopRated = 'https://api.themoviedb.org/3/movie/top_rated?api_key=03c2178517dc28b9826a04205452dba5&language=en-US&page=1';
-
-
+const hamburger = document.querySelector('.hamburger');
+const navItems = document.querySelector('.nav-items');
 
 function getRatingColor(vote) {
     if(vote >= 7.5)
@@ -56,7 +56,13 @@ function getMovies(urlMovies,movieType) {
 }
 
 
-
+hamburger.addEventListener('click', () =>{
+    navItems.classList.toggle('show');
+    if(navItems.classList.contains('show'))
+        hamburger.innerHTML = `<i class="fa fa-close"></i>`;
+    else
+        hamburger.innerHTML = `<i class="fas fa-bars"></i>`;
+})
 
 window.addEventListener('scroll' , () => {
     let header = document.querySelector('header');

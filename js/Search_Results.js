@@ -1,5 +1,7 @@
 let sortSelect = document.querySelector('#sortSelect')
 let genreSelect = document.querySelector('#genreSelect');
+const hamburger = document.querySelector('.hamburger');
+const navItems = document.querySelector('.nav-items');
 let currMoviesList = {};
 let currMovieType = {};
 const trendingAPI = `https://api.themoviedb.org/3/trending/movie/day?api_key=03c2178517dc28b9826a04205452dba5`;
@@ -84,6 +86,14 @@ function getGenres() {
             console.log("Oops ... ", e);
         })
 }
+
+hamburger.addEventListener('click', () =>{
+    navItems.classList.toggle('show');
+    if(navItems.classList.contains('show'))
+        hamburger.innerHTML = `<i class="fa fa-close"></i>`;
+    else
+        hamburger.innerHTML = `<i class="fas fa-bars"></i>`;
+})
 
 genreSelect.addEventListener('change' , () => {
     const value = genreSelect.value;
