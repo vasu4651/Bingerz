@@ -488,4 +488,8 @@ a:hover{
     .info h3{
         font-size: 0.6rem;
     }
+
+    #search{
+        font-size: 0.4rem;
+    }
 }
