@@ -4,7 +4,7 @@
     height: 1000px;
     margin: auto;
     margin-top: 50px;
-    padding: 3rem 6.5rem;
+    padding: 3rem 5rem;
     border: 1px solid grey;
     background-color: rgba(50, 50, 50, 0.5);
     overflow: scroll;
@@ -33,4 +33,28 @@
 
 .span-bingerz{
     color: rgb(192, 226, 43);
+}
+
+@media (max-width: 768px) {
+    .about-sec-1{
+        padding: 1rem 2rem;
+        width: 85%;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-sec-1{
+        padding: 1rem 1rem;
+        width: 90%;
+    }
+
+    .about-sec-1 h1{
+        font-size: 1.5rem;
+    }
+
+    .about-sec-1 div{
+        font-size: 1rem;
+        letter-spacing: 1px;
+        line-height: 25px;
+    }
 }
