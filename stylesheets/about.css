@@ -1,0 +1,36 @@
+.about-sec-1{
+    color: white;
+    width: 75%;
+    height: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 3rem 6.5rem;
+    border: 1px solid grey;
+    background-color: rgba(50, 50, 50, 0.5);
+    overflow: scroll;
+}
+
+.about-sec-1 h1{
+    color: black;
+    font-size: 2.7rem;
+    
+}
+
+.about-sec-1 div{
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    line-height: 35px;
+}
+
+#rather{
+    margin-top: 80px;
+    color: rgb(253, 253, 253);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.span-bingerz{
+    color: rgb(192, 226, 43);
+}

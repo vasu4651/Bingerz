@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/app.css">
-    <title>Bingerz</title>
+    <link rel="stylesheet" href="../stylesheets/app.css">
+    <link rel="stylesheet" href="../stylesheets/about.css">
+    <title>About</title>
 </head>
 
 <body>
@@ -16,54 +17,41 @@
                 <h1 id="logo">BINGERZ</h1>
             </a>
             <ul class="nav-items">
-                <li class="nav-link"> <a style="color: white;" href="#">Home</a> </li>
-                <li class="nav-link"> <a href="htmls/Search_Results.html">Browse</a> </li>
-                <li class="nav-link"> <a href="htmls/about.html">About Us</a> </li>
+                <li class="nav-link"> <a href="../index.html">Home</a> </li>
+                <li class="nav-link"> <a href="../htmls/Search_Results.html">Browse</a> </li>
+                <li class="nav-link"> <a style="color: white;" href="#">About Us</a> </li>
             </ul>
-            <form id="form" method="get" action="htmls/Search_Results.html">
+            <form id="form" method="get" action="../htmls/Search_Results.html">
                 <input type="text" id="search" class="search" name="queryString" placeholder="Quick Search">
                 <button class="hamburger" type="button"><i class="fas fa-bars"></i></button>
             </form>
-            <!-- <span>\f0c9</span> -->
         </nav>
     </header>
 
     <main>
+        <section class="about-sec-1">
+            <h1>About Bingerz</h1>
+            <div>
+                Bingerz is a movie browsing website. We strive to give you the best experience while looking for your favourite movies.
+                All the data is fetched live from the TMDB public database and laid out in a comprehensive manner.
+            </div>
+            <br><br>
 
-
-        <!-- <section class="sec">
-            <h2 class="movie-type">Popular Movies</h2>
-
-            <div class="movie">
-                <img src="https://image.tmdb.org/t/p/w500/jTswp6KyDYKtvC52GbHagrZbGvD.jpg" alt="">
-                <div class="info">
-                    <h3>Luca</h3>
-                    <span class="rating orange">8.2</span>
-                </div>
-                <div class="overview">
-                    <h3>Overview</h3>
-                    <div>Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But
-                        all
-                        the fun is threatened by a deeply-held secret: they are sea monsters from another world just
-                        below
-                        the water’s surface.</div>
-                </div>
+            <h1>Why Bingerz ?</h1>
+            <div>
+                To get the most trusted data from the biggest database in the industry.
+                Even the posters don't get stale. They get updated frequently.
+            </div>
+            <br>
+            <div>
+                We provide detailed yet crisp overview without having to load multiple web pages adding to the ease of usability.
             </div>
 
-            <div class="movie">
-                <img src="https://image.tmdb.org/t/p/w500/qIicLxr7B7gIt5hxZxo423BJLlK.jpg" alt="">
-                <div class="info">
-                    <h3>F9</h3>
-                    <span class="rating orange">7.7</span>
-                </div>
-                <div class="overview">
-                    <h3>Overview</h3>
-                    <div>Dominic Toretto and his crew battle the most skilled assassin and high-performance driver
-                        they've
-                        ever encountered: his forsaken brother.</div>
-                </div>
+            <div id="rather">
+                "Rather than wasting half your weekend searching for a movie join <span class="span-bingerz">Bingerz</span> and start binging rightaway."
             </div>
-        </section>  -->
+        </section>
+
     </main>
 
     <footer class="footer">
@@ -90,8 +78,9 @@
             </div>
         </section>
     </footer>
+
     <script src="https://kit.fontawesome.com/3a105db922.js" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+    <script src="../js/about.js"></script>
 </body>
 
 </html>
